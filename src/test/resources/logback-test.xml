@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] [%logger{36}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 测试日志：打印业务服务的每次下发/心跳/暂停/回滚，便于看出用例覆盖的业务 -->
+    <logger name="com.github.lechandonga.firmwarestagedrolloutjava.service" level="DEBUG"/>
+    <!-- 打印每个用例开头/结尾的【业务-用例-检查点-结果】说明日志 -->
+    <logger name="com.github.lechandonga.firmwarestagedrolloutjava.tests" level="INFO"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
